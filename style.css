@@ -4,21 +4,37 @@ body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  background-color: #1b1b32;
-  color: #f5f6f7;
+  background-color: #27272c;
+  color: #c393f4;
   font-family: 'Inter', monospace;
   width: 100%;
 }
 
 input,textarea{
-  background-color: #f1f7e9;
-  border: transparent;
+  background-color: transparent;
+  border: 1px solid #f1caa3;
   font-family: 'Inter', monospace;
   font-size: 14px;
 }
+input:focus ,textarea:focus{
+  border: 1px solid #c393f4;
+
+}
+input[type="text" i],input[type="number" i],textarea {
+  padding: 1px 2px;
+  color: #c393f4;
+}
+input:focus,
+select:focus,
+textarea:focus {
+    outline: none;
+}
+
+
 h1{
   font-weight: 700;
-  text-shadow: 1px 1px #769fcb;
+  text-shadow: 1px 1px #c393f4;
+  color: #f1caa3d5;
 }
 header{
   margin-bottom: 50px;
@@ -27,7 +43,7 @@ header{
 
 
 nav{
-  background-color: #1b1b32;
+  background-color: #272727;
   position: fixed;
   top: 0;
   display: flex;
@@ -39,17 +55,17 @@ nav{
 }
 nav a{
   cursor: pointer;
-  color: inherit;
+  color: #f1caa3;
 }
 nav a i{
-  color: #f5f6f7;
+  color: #f1caa3;
 }
 
 nav h1{
   margin-left: 20px;
   font-weight: 900;
   font-size: 1.8rem;
-  color: inherit;
+  color: #f1caa3;
 }
 
 nav div{
@@ -61,8 +77,14 @@ nav div a,i{
   font-weight: 600;
   text-decoration: none;
 }
-a>i:hover{
-  color: gray;
+nav>h1:hover{
+color: #c393f4af;
+transition-duration: 0.2s;
+scale: 1.05;
+
+}
+a>i:hover {
+  color: #c393f4af;
   scale: 1.2;
   transition-duration: 0.3s;
 }
@@ -81,12 +103,12 @@ form:not(label),fieldset:first-child{
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  
 }
 label{
   margin: 15px;
   font-family: 'Inter',monospace;
   font-weight: 600;
+  color: #f1caa3;
 }
 fieldset{
   border: #1b1b32;
@@ -105,7 +127,7 @@ input[type=radio]{
   width: 250px;
   height: 40px;
    margin-top: 50px;
-   background-color: #769fcb;
+   background-color: #c393f4;
   border: none;
   text-align: center;
   font-family: inherit;
@@ -118,6 +140,7 @@ input[type=radio]{
 .btn:hover{
   scale: 1.05;
   transition-duration: 0.2s;
+  background-color: #f1caa3;
 }
 
 
