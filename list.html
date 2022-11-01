@@ -36,14 +36,14 @@
       table,
       td,
       th {
-        border: 1px dashed darkgray;
+        border: 2px dotted darkgray;
       }
 
       table {
-        /* border-collapse: collapse; */
+        border-collapse: collapse;
         height: aut0;
         width: 80%;
-        box-shadow: 0px 4px 4px rgba(169, 169, 200, 0.5);
+        box-shadow: 0px 4px 4px #769fcb;
         overflow-x: auto;
       }
 
@@ -86,8 +86,8 @@
       <nav>
         <h1>Employee Detalils</h1>
         <div>
-          <a href="/index.html"><i class="fas fa-home"></i> Home</a>
-          <a href="/list.html"><i class="fas fa-book"></i> List</a>
+          <a href="/index.html"><i class="fas fa-pencil-alt">&nbsp; Form</i></a>
+          <a href="/list.html"><i class="fas fa-book">&nbsp; List</i></a>
           <!-- <a href="/edit.html"><i class="fas fa-pencil"></i> Edit</a> -->
         </div>
       </nav>
@@ -96,7 +96,7 @@
     <div class="table-container">
       <h1>Employee list</h1>
       <div id="filter-container">
-        <label for="filter">search with department</label>
+        <label for="filter">Search with department:</label>
         <input
           type="text"
           id="myInput"

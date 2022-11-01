@@ -20,8 +20,10 @@
       <nav>
         <h1>Employee Detalils</h1>
         <div>
-          <a href="/index.html"><i class="fas fa-home"></i> Home</a>
-          <a href="/list.html"><i class="fas fa-book"></i> List</a>
+          <a href="/index.html"
+            ><i class="fas fa-pencil-alt">&nbsp; Form</i>
+          </a>
+          <a href="/list.html"><i class="fas fa-book">&nbsp; List</i></a>
           <!-- <a href="/edit.html"><i class="fas fa-pencil"></i> Edit</a> -->
         </div>
       </nav>
@@ -49,7 +51,7 @@
             required
           />
 
-          <fieldset>
+          <fieldset id="fieldset">
             <label for="gender"> &nbsp Gender<span>*</span> :</label>
             <input type="radio" id="html" name="gender" value="Male" /><label
               for="male"
@@ -93,6 +95,14 @@
         </fieldset>
 
         <button class="btn" type="submit">Submit</button>
+
+        <div class="alert hide">
+          <span class="fas fa-check-circle"></span>
+          <span class="msg">Done: Details added</span>
+          <div class="close-btn">
+            <span class="fas fa-times"></span>
+          </div>
+        </div>
       </form>
     </div>
     <!-- onclick="readData()"  -->
@@ -115,22 +125,39 @@
     </script>
     <script>
       $(document).ready(function () {
-        
         var users = JSON.parse(localStorage.getItem("Users")) || [];
 
-        $('.btn').click(function(e){
+        $(".btn").click(function (e) {
+          e.preventDefault();
           var userData = {
-          Employee: $("#name").val(),
-          age: $("#age").val(),
-          gender: $("input[name='gender']:checked").val(),
-          department: $("#department").val(),
-          designation: $("#designation").val(),
-          address: $("#address").val()
-        };
-            users.push(userData);
-            localStorage.setItem('Users', JSON.stringify(users));
-        })
+            Employee: $("#name").val(),
+            age: $("#age").val(),
+            gender: $("input[name='gender']:checked").val(),
+            department: $("#department").val(),
+            designation: $("#designation").val(),
+            address: $("#address").val(),
+          };
+          users.push(userData);
+          localStorage.setItem("Users", JSON.stringify(users));
 
+          
+
+          $(".alert").addClass("show");
+          $(".alert").removeClass("hide");
+          $(".alert").addClass("showAlert");
+          setTimeout(function () {
+            $(".alert").removeClass("show");
+            $(".alert").addClass("hide");
+            $("input,textarea").val("");
+            $('input[name="gender"]').prop("checked", false);
+          }, 5000);
+
+          $(".close-btn").click(function () {
+            $(".alert").removeClass("show");
+            $(".alert").addClass("hide");
+            $("input,textarea").val("");
+          });
+        });
       });
     </script>
   </body>
