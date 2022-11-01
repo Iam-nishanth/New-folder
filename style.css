@@ -48,7 +48,7 @@ nav a i{
 nav h1{
   margin-left: 20px;
   font-weight: 900;
-  font-size: 2rem;
+  font-size: 1.8rem;
   color: inherit;
 }
 
@@ -241,4 +241,9 @@ body > div > form > fieldset > fieldset > label:nth-child(5)
 .alert{
   display: none;
 }
+}
+@media only screen and (max-width:450px){
+  body{
+    overflow-x: hidden;
+  }
 }
